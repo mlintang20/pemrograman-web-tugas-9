@@ -25,6 +25,9 @@
       <button type="button" class="btn btn-primary my-3">
         <a href="form_simpan.php" class="text-light text-decoration-none">Tambah Siswa</a>
       </button>
+      <button type="button" class="btn btn-info my-3">
+        <a href="laporan_pdf.php" class="text-dark text-decoration-none">Unduh PDF</a>
+      </button>
     </nav>
     
     <table>
