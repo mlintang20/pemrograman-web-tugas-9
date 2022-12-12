@@ -15,6 +15,7 @@
     $pdf->Cell(260, 7, "", 0, 1, "C");
 
     $pdf->SetFont("Times", "B", 14);
+    $pdf->Cell(35, 10, "Foto", 1, 0, "C");
     $pdf->Cell(40, 10, "NIS", 1, 0, "C");
     $pdf->Cell(55, 10, "Nama", 1, 0, "C");
     $pdf->Cell(40, 10, "Jenis Kelamin", 1, 0, "C");
@@ -28,6 +29,8 @@
     $sql->execute();
 
     while ($row = $sql->fetch()){
+        $image = $row["foto"];
+        $pdf->Cell(35, 30, $pdf->Image("images/".$image, $pdf->GetX() + 2.5, $pdf->GetY(), 30, 30), 1, 0, "C", false);
         $pdf->Cell(40, 30, $row["nis"], 1, 0, "C");
         $pdf->Cell(55, 30, $row["nama"], 1, 0, "C");
         $pdf->Cell(40, 30, $row["jenis_kelamin"], 1, 0, "C");
